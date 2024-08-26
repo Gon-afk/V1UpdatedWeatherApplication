@@ -1,34 +1,21 @@
 package com.example.weatherapplication;
 
-import android.app.Notification;
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
-import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
-import org.w3c.dom.Text;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.Query;
@@ -107,5 +94,9 @@ public class MainActivity extends AppCompatActivity {
     public void GetCityOnClick(View view) {
         CityEditText = findViewById(R.id.CityEditText);
         //String city = CityEditText.getText().toString();
+    }
+    public void sensors(View view) {
+        Intent myIntent = new Intent(this, SensorClass.class);
+        MainActivity.this.startActivity(myIntent);
     }
 }
